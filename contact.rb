@@ -48,23 +48,21 @@ class Contact
   # 2. the new value for that attribute
   # and then make the appropriate change to the contact
   def update(attribute, value)
-    # Contact.all.each do |contact|
-      case attribute
-        when "first_name"
-          return @first_name = value
-        when "last_name"
-          return @last_name = value
-        when "email"
-          return @email = value
-        when "note"
-          return @note = value
-        when "id"
-          return "ID should not be changed"
-        else
-          return "Attribute does not exist"
-      end
-      "Contact does not exist"
-
+    case attribute
+      when "first_name"
+        return @first_name = value
+      when "last_name"
+        return @last_name = value
+      when "email"
+        return @email = value
+      when "note"
+        return @note = value
+      when "id"
+        return "ID should not be changed"
+      else
+        return "Attribute does not exist"
+    end
+    "Contact does not exist"
   end
 
   # This method should work similarly to the find method above
@@ -114,17 +112,23 @@ class Contact
 
   # This method should delete all of the contacts
   def self.delete_all
-
+    @@contacts = [nil]
+    Contact.all
   end
 
   def full_name
-
+    "#{first_name} #{last_name}"
   end
 
   # This method should delete the contact
   # HINT: Check the Array class docs for built-in methods that might be useful here
-  def delete
-
+  def self.delete(id)
+    Contact.all.each do |contact|
+      if id == contact.id
+        @@contacts.delete(contact)
+      end
+      "no matching id"
+    end
   end
 
   # Feel free to add other methods here, if you need them.
