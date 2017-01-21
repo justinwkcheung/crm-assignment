@@ -47,7 +47,23 @@ class Contact
   # 1. which of the contact's attributes you want to update
   # 2. the new value for that attribute
   # and then make the appropriate change to the contact
-  def update
+  def update(attribute, value)
+    # Contact.all.each do |contact|
+      case attribute
+        when "first_name"
+          return @first_name = value
+        when "last_name"
+          return @last_name = value
+        when "email"
+          return @email = value
+        when "note"
+          return @note = value
+        when "id"
+          return "ID should not be changed"
+        else
+          return "Attribute does not exist"
+      end
+      "Contact does not exist"
 
   end
 
