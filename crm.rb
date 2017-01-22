@@ -51,7 +51,7 @@ class CRM
 
   def modify_existing_contact
     puts "Please enter ID of contact you would like to update"
-    id = gets.to_i 
+    id = gets.to_i
 
     puts "Please enter attibute you like to update"
     attribute = gets.chomp
@@ -65,7 +65,6 @@ class CRM
   def delete_contact
     puts "Please enter ID of contact you wish to delete or write \"all\" if you wish to delete all contacts"
     id = gets.to_i
-
     if id == "all"
       Contact.delete_all
     else
