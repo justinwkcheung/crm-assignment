@@ -89,3 +89,6 @@ class CRM
 
 
 end
+
+crm = CRM.new
+crm.main_menu
