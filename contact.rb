@@ -116,7 +116,7 @@ class Contact
 
   # This method should delete all of the contacts
   def self.delete_all
-    @@contacts = [nil]
+    @@contacts = []
     Contact.all
   end
 
